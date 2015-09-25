@@ -255,6 +255,8 @@ public class ForTest : MonoBehaviour
 			GameObject building = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			building.transform.localScale = new Vector3(galo,selo,building_height);
 			building.transform.position = new Vector3(afterX*interval - tmpWidth,((height [regionWidth * afterY + afterX] - tmpDepth)*5f)+(building.transform.localScale.y/2),(afterY* interval - tmpHeight));
+			building.AddComponent<BoxCollider>();
+			building.AddComponent<Rigidbody>().useGravity=false;
 			building.AddComponent<clicked_building>();
 		}
 

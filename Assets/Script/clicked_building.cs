@@ -20,6 +20,11 @@ public class clicked_building : MonoBehaviour {
 		
 	}
 
+	void OnTriggerEnter (Collider other){
+		Text input_name = GameObject.Find ("input_forecase_value").GetComponent<Text>();
+		float height = other.transform.localPosition.y - gameObject.transform.localPosition.y;
+		input_name.text = height.ToString ();
+	}
 	void OnMouseDown()
 	{
 
@@ -30,6 +35,7 @@ public class clicked_building : MonoBehaviour {
 	}
 
 	void CameraMove(){
+		//move the camear to building closely
 		Transform camera_trans = GameObject.Find("Main Camera").GetComponent<Transform>();
 		camera_back = camera_trans;
 		Transform target_trans = GetComponent<Transform> ();
@@ -41,5 +47,7 @@ public class clicked_building : MonoBehaviour {
 		
 		camera_trans.position = target_trans.position - (rot * Vector3.forward * dist) + (Vector3.up * height);
 		camera_trans.LookAt(target_trans);
+		move_camera.camera_movable = false;
+
 	}
 }
