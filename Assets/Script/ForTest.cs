@@ -12,7 +12,7 @@ public class ForTest : MonoBehaviour
 		GameObject temp = Resources.Load ("ImjinRiver-Skin.png") as GameObject;
 
 		//teximg = Resources.Load("Resources/ImjinRiver-Skin.png") as Texture2D;
-		Debug.Log (temp);
+		//Debug.Log (temp);
 		shader = Shader.Find ("Unlit/Texture");
 		MakeMap ("ImjinRiver_Bin.dem");
 		//MakeMap ("jeju.dem");
@@ -57,8 +57,8 @@ public class ForTest : MonoBehaviour
 		int reigonHeight = (regionMax [1] - regionMin [1]) / (int)interval + 1;
 
 		////////////
-		Debug.Log ("regionWidth : " + reigonWidth);
-		Debug.Log ("reigonHeight : " + reigonHeight);
+		//Debug.Log ("regionWidth : " + reigonWidth);
+		//Debug.Log ("reigonHeight : " + reigonHeight);
 		///////////
 		widthtest = reigonWidth;
 		heighttest = reigonHeight;
@@ -70,9 +70,9 @@ public class ForTest : MonoBehaviour
 		for (int i = 0; i < resolution; i++) {
 			height [i] = reader.ReadSingle ();
 		}
-		Debug.Log ("resolution: "+resolution);
-		Debug.Log ("Width : " + widthtest);
-		Debug.Log ("Height : " + heighttest);
+		//Debug.Log ("resolution: "+resolution);
+		//Debug.Log ("Width : " + widthtest);
+		//Debug.Log ("Height : " + heighttest);
 		//>file close
 		reader.Close ();
 		fs.Close ();
@@ -233,8 +233,8 @@ public class ForTest : MonoBehaviour
 		int ncols_building = reader.ReadInt32();
 		int nrows_building = reader.ReadInt32();
 		
-		Debug.Log ("ncols_building :" + ncols_building);
-		Debug.Log ("nrows_building : " + nrows_building);
+		//Debug.Log ("ncols_building :" + ncols_building);
+		//Debug.Log ("nrows_building : " + nrows_building);
 
 		while (reader.PeekChar () != -1) {
 
@@ -246,17 +246,17 @@ public class ForTest : MonoBehaviour
 			
 			building_height = reader.ReadInt32();
 			
-			Debug.Log ("afterX : " + afterX);
-			Debug.Log ("afterY : " + afterY);
-			Debug.Log ("galo : " + galo);
-			Debug.Log ("selo : " + selo);
-			Debug.Log ("height : " + building_height);
+			//Debug.Log ("afterX : " + afterX);
+			//Debug.Log ("afterY : " + afterY);
+			//Debug.Log ("galo : " + galo);
+			//Debug.Log ("selo : " + selo);
+			//Debug.Log ("height : " + building_height);
 			
 			GameObject building = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			building.transform.localScale = new Vector3(galo,selo,building_height);
 			building.transform.position = new Vector3(afterX*interval - tmpWidth,((height [regionWidth * afterY + afterX] - tmpDepth)*5f)+(building.transform.localScale.y/2),(afterY* interval - tmpHeight));
-			building.AddComponent<BoxCollider>();
-			building.AddComponent<Rigidbody>().useGravity=false;
+			//building.AddComponent<BoxCollider>();
+			//building.AddComponent<Rigidbody>().useGravity=false;
 			building.AddComponent<clicked_building>();
 		}
 
