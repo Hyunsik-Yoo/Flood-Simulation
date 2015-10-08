@@ -6,7 +6,7 @@ public class move_camera : MonoBehaviour {
 	public float sensitivityX = 8F; 
 	public float sensitivityY = 8F; 
 	public float speed = 30.0f;
-	public static bool camera_movable = true;
+	public static bool camera_movable = false;
 	float mHdg = 0F; 
 	float mPitch = 0F; 
 

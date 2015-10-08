@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class clicked_cancelBtn : MonoBehaviour {
+public class Event : MonoBehaviour {
 
 
 	public void cancel(){

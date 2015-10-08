@@ -10,12 +10,8 @@ public class ForTest : MonoBehaviour
 	void Start ()
 	{
 		GameObject temp = Resources.Load ("ImjinRiver-Skin.png") as GameObject;
-
-		//teximg = Resources.Load("Resources/ImjinRiver-Skin.png") as Texture2D;
-		//Debug.Log (temp);
 		shader = Shader.Find ("Unlit/Texture");
 		MakeMap ("ImjinRiver_Bin.dem");
-		//MakeMap ("jeju.dem");
 	}
 	void Update ()
 	{
@@ -56,10 +52,9 @@ public class ForTest : MonoBehaviour
 		int reigonWidth = (regionMax [0] - regionMin [0]) / (int)interval + 1;
 		int reigonHeight = (regionMax [1] - regionMin [1]) / (int)interval + 1;
 
-		////////////
 		//Debug.Log ("regionWidth : " + reigonWidth);
 		//Debug.Log ("reigonHeight : " + reigonHeight);
-		///////////
+
 		widthtest = reigonWidth;
 		heighttest = reigonHeight;
 		int resolution = reigonWidth * reigonHeight;
@@ -106,7 +101,6 @@ public class ForTest : MonoBehaviour
 				                                               (height [reigonWidth * i + j] - tmpDepth)*5f,
 				                                               (i * interval - tmpHeight));
 
-				//Debug.Log((height [reigonWidth * i + j] - tmpDepth)*5f);
 			}
 
 		}
@@ -237,7 +231,6 @@ public class ForTest : MonoBehaviour
 		//Debug.Log ("nrows_building : " + nrows_building);
 
 		while (reader.PeekChar () != -1) {
-
 			
 			afterX = reader.ReadInt32 ()/(int)interval;		//To adjust the resolution, divid with interval 
 			afterY = reader.ReadInt32 ()/(int)interval;
@@ -246,11 +239,11 @@ public class ForTest : MonoBehaviour
 			
 			building_height = reader.ReadInt32();
 			
-			//Debug.Log ("afterX : " + afterX);
-			//Debug.Log ("afterY : " + afterY);
-			//Debug.Log ("galo : " + galo);
-			//Debug.Log ("selo : " + selo);
-			//Debug.Log ("height : " + building_height);
+			/*Debug.Log ("afterX : " + afterX);
+			Debug.Log ("afterY : " + afterY);
+			Debug.Log ("galo : " + galo);
+			Debug.Log ("selo : " + selo);
+			Debug.Log ("height : " + building_height);*/
 			
 			GameObject building = GameObject.CreatePrimitive(PrimitiveType.Cube);
 			building.transform.localScale = new Vector3(galo,selo,building_height);

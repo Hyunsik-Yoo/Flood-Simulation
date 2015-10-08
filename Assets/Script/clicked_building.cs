@@ -47,7 +47,6 @@ public class clicked_building : MonoBehaviour {
 		
 		camera_trans.position = target_trans.position - (rot * Vector3.forward * dist) + (Vector3.up * height);
 		camera_trans.LookAt(target_trans);
-		move_camera.camera_movable = false;
-
+		move_camera.camera_movable = false;	
 	}
 }
