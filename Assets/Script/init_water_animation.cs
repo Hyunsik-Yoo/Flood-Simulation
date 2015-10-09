@@ -35,8 +35,8 @@ public class init_water_animation : MonoBehaviour {
 
 		fileReader ();
 		int tempcount2 = 4;
-		for (float i=-15; i<15; i++) {
-			for (float j=-19; j<14; j++) {
+		for (float i=0; i<20; i++) {
+			for (float j=0; j<20; j++) {
 				ammo2 = Instantiate(brick, new Vector3(float.Parse(strArr[tempcount2-3]),float.Parse (strArr[tempcount2-2]),float.Parse(strArr[tempcount2-1])), Quaternion.identity) as Transform;
 				ammo2.name = i.ToString()+","+j.ToString()+"terrain";
 				ammo2.gameObject.AddComponent<Animation>();
@@ -61,8 +61,8 @@ public class init_water_animation : MonoBehaviour {
 	}
 
 	void changespeed(){
-		for (float i=-15; i<15; i++) {
-			for (float j=-19; j<14; j++) {
+		for (float i=0; i<20; i++) {
+			for (float j=0; j<20; j++) {
 				ammo2.name = i.ToString()+","+j.ToString()+"terrain";
 				
 			}
@@ -79,7 +79,7 @@ public class init_water_animation : MonoBehaviour {
 		time_slice[] height_data = new time_slice[144];
 		for (int time=0; time<143; time++) {
 			height_data[time] = new time_slice();
-			for(int i=0;i<30*33;i++){
+			for(int i=0;i<20*20;i++){
 				height_data[time].height[i] = float.Parse(strArr[tempcount-2]);
 				height_data[time].x[i] = float.Parse(strArr[tempcount-3]);
 				height_data[time].z[i] = float.Parse(strArr[tempcount-1]);
@@ -89,8 +89,8 @@ public class init_water_animation : MonoBehaviour {
 		
 		
 		tempcount = 0;
-		for (float i=-15; i<15; i++) {
-			for (float j=-19; j<14; j++) {
+		for (float i=0; i<20; i++) {
+			for (float j=-0; j<20; j++) {
 				ammo = GameObject.Find (i.ToString () + "," + j.ToString () + "terrain");
 				anim = ammo.gameObject.GetComponent<Animation>();
 				curve_height = new AnimationCurve();
@@ -110,7 +110,7 @@ public class init_water_animation : MonoBehaviour {
 				clip.SetCurve("",typeof(Transform), "localPosition.z", curve_z);
 				anim.AddClip(clip,"anim");
 				anim.Play("anim");
-				anim["anim"].speed = 2;
+				anim["anim"].speed = 30;
 			}
 		}
 
@@ -119,7 +119,7 @@ public class init_water_animation : MonoBehaviour {
 
 
 	void Update () {
-		Animation time = GameObject.Find ("-15,-19terrain").GetComponent<Animation> ();
+		Animation time = GameObject.Find ("0,0terrain").GetComponent<Animation> ();
 		Time = GameObject.Find ("Time");
 		Time.GetComponent<Text> ().text = time["anim"].time.ToString();
 	}
