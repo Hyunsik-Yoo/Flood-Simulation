@@ -12,7 +12,7 @@ public class init_water_animation : MonoBehaviour {
 	public Scrollbar bar;
 
 	GameObject Time;
-	static int minute = 60;
+	static int timesclice = 60*10;
 	string text;
 	string[] strArr;
 	int tempcount = 0;
@@ -86,6 +86,7 @@ public class init_water_animation : MonoBehaviour {
 				tempcount = tempcount+4;
 			}
 		}
+		Debug.Log (height_data.Length);
 		
 		
 		tempcount = 0;
@@ -99,9 +100,9 @@ public class init_water_animation : MonoBehaviour {
 
 				clip = new AnimationClip();
 				for(int k=0;k<143;k++){
-					curve_height.AddKey(k*minute,height_data[k].height[tempcount]);
-					curve_x.AddKey(k*minute,height_data[k].x[tempcount]);
-					curve_z.AddKey(k*minute,height_data[k].z[tempcount]);
+					curve_height.AddKey(k*timesclice,height_data[k].height[tempcount]);
+					curve_x.AddKey(k*timesclice,height_data[k].x[tempcount]);
+					curve_z.AddKey(k*timesclice,height_data[k].z[tempcount]);
 				}
 				tempcount++;
 				clip.legacy = true;
@@ -110,7 +111,8 @@ public class init_water_animation : MonoBehaviour {
 				clip.SetCurve("",typeof(Transform), "localPosition.z", curve_z);
 				anim.AddClip(clip,"anim");
 				anim.Play("anim");
-				anim["anim"].speed = 30;
+				//Debug.Log(clip.length);
+				anim["anim"].speed =16;
 			}
 		}
 
@@ -121,7 +123,19 @@ public class init_water_animation : MonoBehaviour {
 	void Update () {
 		Animation time = GameObject.Find ("0,0terrain").GetComponent<Animation> ();
 		Time = GameObject.Find ("Time");
-		Time.GetComponent<Text> ().text = time["anim"].time.ToString();
+		//Debug.Log(time ["anim"].time);
+		float play_time = time ["anim"].time;
+		int hours = (int)(play_time / 3600);
+		int minutes = (int)((play_time / 60) % 60);
+		int seconds = (int)(play_time % 60);
+		Time.GetComponent<Text> ().text = hours + "시" + minutes + "분" + seconds + "초";
+
+		bar.value += time["anim"].speed/85200;
+
 	}
 
+	public static void change_bar_value(){
+		Debug.Log ("하히후헤호");
+	}
+	
 }
