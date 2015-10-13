@@ -112,7 +112,7 @@ public class init_water_animation : MonoBehaviour {
 				anim.AddClip(clip,"anim");
 				anim.Play("anim");
 				//Debug.Log(clip.length);
-				anim["anim"].speed =16;
+				anim["anim"].speed =1;
 			}
 		}
 
@@ -130,12 +130,17 @@ public class init_water_animation : MonoBehaviour {
 		int seconds = (int)(play_time % 60);
 		Time.GetComponent<Text> ().text = hours + "시" + minutes + "분" + seconds + "초";
 
-		bar.value += time["anim"].speed/85200;
+
+
+
+		bar.value = time["anim"].time/85200/*.speed/85200*/;
 
 	}
 
-	public static void change_bar_value(){
-		Debug.Log ("하히후헤호");
+	public void change_bar_value(){
+		Debug.Log ("change value");
 	}
+
+
 	
 }

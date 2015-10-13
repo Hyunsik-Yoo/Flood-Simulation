@@ -50,7 +50,6 @@
      <Compile Include="Assets\Script\Event.cs" />
      <Compile Include="Assets\Script\ForTest.cs" />
      <Compile Include="Assets\Script\Toogle_Group.cs" />
-     <Compile Include="Assets\Script\anim_script.cs" />
      <Compile Include="Assets\Script\clicked_building.cs" />
      <Compile Include="Assets\Script\init_water_animation.cs" />
      <Compile Include="Assets\Script\init_water_readfile.cs" />

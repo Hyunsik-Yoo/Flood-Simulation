@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\init_water_animation.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Script\Toogle_Group.cs">
     <Files>
-      <File FileName="Assets\Script\Toogle_Group.cs" Line="22" Column="1" />
-      <File FileName="Assets\Script\init_water_animation.cs" Line="133" Column="41" />
+      <File FileName="Assets\Script\Toogle_Group.cs" Line="13" Column="3" />
+      <File FileName="Assets\Script\init_water_animation.cs" Line="142" Column="3" />
+      <File FileName="Assets\Script\ForTest.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\clicked_building.cs" Line="1" Column="1" />
+      <File FileName="Assets\Script\move_camera.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
