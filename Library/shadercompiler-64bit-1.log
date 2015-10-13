@@ -1,10 +1,5 @@
-<<<<<<< Updated upstream
 Base path: C:/Program Files/Unity/Editor/Data
 Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-9744
-=======
-Base path: /Applications/Unity/Unity.app/Contents
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-2104820480
->>>>>>> Stashed changes
 Cmd: getPlatforms
 Cmd: preprocess
   insize=4320 outsize=1045 ok=1
