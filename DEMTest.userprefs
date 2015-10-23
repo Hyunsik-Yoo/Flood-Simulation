@@ -1,12 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/init_water_animation.cs">
     <Files>
-      <File FileName="Assets/Script/init_water_animation.cs" Line="124" Column="65" />
-      <File FileName="Assets/Script/init_water_readfile.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/move_camera.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/clicked_building.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/ForTest.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/WWW/WWWHelper.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/WWW/WWWMain.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/init_water_animation.cs" Line="56" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

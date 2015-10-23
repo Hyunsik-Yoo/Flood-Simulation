@@ -48,8 +48,6 @@ public class init_water_animation : MonoBehaviour {
 
 		create_animation ();
 
-
-
 	}
 
 	void fileReader(){
